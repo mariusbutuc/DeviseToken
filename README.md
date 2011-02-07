@@ -1,4 +1,4 @@
-== Devise Token Test ==
+## Devise Token Test
 
 This is the demo application for testing the
 [*Token Authenticatable module in Devise*](http://stackoverflow.com/questions/4901708/token-authenticatable-module-in-devise)
