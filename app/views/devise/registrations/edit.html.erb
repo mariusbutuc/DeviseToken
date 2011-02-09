@@ -15,6 +15,21 @@
   <p><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></p>
 
+  <hr />
+
+  <p><%= f.label :token_authentication_key %><br />
+  <%= resource.authentication_token.blank? ? "Token Empty" : resource.authentication_token %></p>
+
+  <p><%= link_to "Generate Token", token_authentications_path(:user_id => resource.id), :method => :post, :confirm => "Are you sure?"  %>
+  <%= link_to "Delete Token", token_authentication_path(resource), :method => :delete, :confirm => "Are you sure?"  %></p>
+
+  <% if resource.authentication_token %>
+    <p>You can use this url to login<br />
+    <%= link_to "http://localhost:3000#{root_path(:auth_token => resource.authentication_token)}", root_path(:auth_token => resource.authentication_token)  %></p>
+  <% end %>
+
+  <hr />
+
   <p><%= f.submit "Update" %></p>
 <% end %>
 
@@ -23,3 +38,4 @@
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
 
 <%= link_to "Back", :back %>
+

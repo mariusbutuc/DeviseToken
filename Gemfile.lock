@@ -28,9 +28,11 @@ GEM
       activemodel (= 3.0.3)
       activesupport (= 3.0.3)
     activesupport (3.0.3)
+    annotate-models (1.0.4)
     arel (2.0.6)
     bcrypt-ruby (2.1.2)
     builder (2.1.2)
+    cancan (1.5.1)
     devise (1.1.5)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 1.0.2)
@@ -94,6 +96,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate-models (= 1.0.4)
+  cancan
   devise
   rails (= 3.0.3)
   rspec
